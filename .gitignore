@@ -1,0 +1,19 @@
+# Local environment & runtime configuration files (never commit credentials)
+.env
+.env.local
+.env.*.local
+js/config.local.js
+
+# OS & Editor files
+.DS_Store
+Thumbs.db
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+*.swp
+*.swo
+
+# Logs & temporary files
+*.log
+npm-debug.log*
+.vercel

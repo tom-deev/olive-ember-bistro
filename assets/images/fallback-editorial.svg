@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800" role="img" aria-label="Olive &amp; Ember Bistro interior atmosphere illustration">
+  <rect width="1200" height="800" fill="#233024"/>
+  <rect x="40" y="40" width="1120" height="720" fill="none" stroke="#465747" stroke-width="1.5"/>
+  <!-- Architectural arch -->
+  <path d="M420 640 L420 340 A180 180 0 0 1 780 340 L780 640 Z" fill="#2C3B2D" stroke="#8A9A86" stroke-width="1.5"/>
+  <!-- Warm hearth glow -->
+  <circle cx="600" cy="440" r="85" fill="#C46D4E" opacity="0.22"/>
+  <circle cx="600" cy="440" r="42" fill="#D98A6C" opacity="0.35"/>
+  <!-- Botanical sprig -->
+  <path d="M560 460 Q600 410 640 390" fill="none" stroke="#F4EFE6" stroke-width="2" stroke-linecap="round"/>
+  <ellipse cx="585" cy="422" rx="14" ry="6" transform="rotate(-30 585 422)" fill="#8A9A86"/>
+  <ellipse cx="615" cy="405" rx="14" ry="6" transform="rotate(-20 615 405)" fill="#F4EFE6"/>
+  <text x="600" y="695" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="26" fill="#F4EFE6" letter-spacing="3">OLIVE &amp; EMBER BISTRO</text>
+  <text x="600" y="725" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="13" fill="#A8B5A4" letter-spacing="4">GOOD FOOD · SLOW MOMENTS · LASTING MEMORIES</text>
+</svg>

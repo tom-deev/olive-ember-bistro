@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img" aria-label="Olive &amp; Ember Bistro culinary illustration">
+  <rect width="800" height="600" fill="#F4EFE6"/>
+  <rect x="28" y="28" width="744" height="544" rx="8" fill="none" stroke="#D8CEBE" stroke-width="1.5"/>
+  <circle cx="400" cy="275" r="135" fill="#EBE3D5" stroke="#2C3B2D" stroke-width="2"/>
+  <circle cx="400" cy="275" r="98" fill="none" stroke="#8A9A86" stroke-width="1" stroke-dasharray="4 6"/>
+  <!-- Olive branch motif -->
+  <path d="M340 310 C375 270, 425 250, 465 235" fill="none" stroke="#2C3B2D" stroke-width="2.5" stroke-linecap="round"/>
+  <ellipse cx="372" cy="270" rx="16" ry="8" transform="rotate(-35 372 270)" fill="#8A9A86"/>
+  <ellipse cx="408" cy="252" rx="16" ry="8" transform="rotate(-25 408 252)" fill="#2C3B2D"/>
+  <ellipse cx="395" cy="285" rx="15" ry="7" transform="rotate(20 395 285)" fill="#8A9A86"/>
+  <ellipse cx="435" cy="264" rx="15" ry="7" transform="rotate(15 435 264)" fill="#C46D4E"/>
+  <circle cx="416" cy="274" r="6" fill="#C46D4E"/>
+  <text x="400" y="465" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="24" fill="#2C3B2D" letter-spacing="2">OLIVE &amp; EMBER</text>
+  <text x="400" y="495" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="13" fill="#6E6A63" letter-spacing="3">SEASONAL KITCHEN &amp; WOODFIRE BISTRO</text>
+</svg>

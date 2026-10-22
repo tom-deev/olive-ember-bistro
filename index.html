@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Olive &amp; Ember Bistro — Good food. Slow moments. Lasting memories.</title>
+  <meta name="description" content="Olive &amp; Ember Bistro is a contemporary woodfire and seasonal kitchen in Pune. Explore our curated menu and request a table reservation.">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Global Navigation -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo" aria-label="Olive &amp; Ember Bistro Home">
+        <span class="brand-logo__title">Olive &amp; Ember</span>
+        <span class="brand-logo__subtitle">Bistro &amp; Hearth</span>
+      </a>
+
+      <button
+        type="button"
+        class="nav-toggle"
+        aria-expanded="false"
+        aria-controls="primary-navigation"
+        aria-label="Open navigation menu"
+      >
+        <span class="nav-toggle__bars" aria-hidden="true">
+          <span class="nav-toggle__bar"></span>
+          <span class="nav-toggle__bar"></span>
+          <span class="nav-toggle__bar"></span>
+        </span>
+      </button>
+
+      <nav id="primary-navigation" class="nav-menu" aria-label="Primary navigation">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link is-active" aria-current="page">Home</a></li>
+          <li><a href="menu.html" class="nav-link">Menu</a></li>
+          <li><a href="about.html" class="nav-link">Our Story</a></li>
+          <li><a href="reservation.html" class="nav-link">Reservations</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+        <a href="reservation.html" class="btn btn--terracotta btn--sm">Book a Table</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- A. Hero Section -->
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="hero__bg" aria-hidden="true">
+        <img
+          src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&amp;fit=crop&amp;w=1800&amp;q=80"
+          alt=""
+          fetchpriority="high"
+          data-fallback-type="editorial"
+        >
+        <div class="hero__overlay"></div>
+      </div>
+
+      <div class="container hero__content">
+        <span class="eyebrow eyebrow--light">Good food. Slow moments. Lasting memories.</span>
+        <h1 id="hero-heading" class="hero__title">A Little Escape, Served Fresh.</h1>
+        <p class="hero__description">
+          Tucked away in a quiet corner of Pune, Olive &amp; Ember brings together wood-fired cooking, market-fresh produce, and unhurried conversation around a warm neighbourhood table.
+        </p>
+        <div class="hero__actions">
+          <a href="reservation.html" class="btn btn--terracotta">Reserve Your Table</a>
+          <a href="menu.html" class="btn btn--outline-light">Explore Our Menu</a>
+        </div>
+
+        <div class="hero__meta">
+          <div>
+            <strong>Kitchen Philosophy</strong>
+            Woodfire hearth, cold-pressed oils &amp; small-farm harvests
+          </div>
+          <div>
+            <strong>Dining Hours (Sample)</strong>
+            Tue – Sun · Lunch &amp; Dinner Service
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- B. Restaurant Introduction -->
+    <section class="section" aria-labelledby="intro-heading">
+      <div class="container editorial-grid">
+        <div class="editorial-media">
+          <div class="editorial-image-wrap editorial-image-wrap--tall">
+            <img
+              src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&amp;fit=crop&amp;w=1000&amp;q=80"
+              alt="Warm sunlit bistro table set with artisan plates and fresh herbs"
+              loading="lazy"
+              decoding="async"
+              data-fallback-type="editorial"
+            >
+          </div>
+          <p class="editorial-caption">
+            Afternoon light in our main dining room — designed for lingering over second courses and conversation.
+          </p>
+        </div>
+
+        <div class="editorial-copy">
+          <span class="eyebrow">Welcome to Olive &amp; Ember</span>
+          <h2 id="intro-heading">Thoughtful Cooking for Unhurried Evenings</h2>
+          <p>
+            We built Olive &amp; Ember around a simple conviction: the best meals are never rushed. Our kitchen begins each morning with regional produce from Maharashtra’s Western Ghats, stone-milled flours, and herbs snipped just before service.
+          </p>
+          <p>
+            Whether you are stopping by for charred sourdough and burrata after work or gathering friends for a slow Sunday dinner, every plate is cooked to order over white-oak embers and finished with restraint.
+          </p>
+
+          <div class="editorial-highlights">
+            <div>
+              <h3 class="highlight-item__title">Seasonal Produce</h3>
+              <p class="highlight-item__text">Menus evolve alongside local harvests, wild mushrooms, and winter citrus.</p>
+            </div>
+            <div>
+              <h3 class="highlight-item__title">Open Wood Hearth</h3>
+              <p class="highlight-item__text">Gentle smoke and patient roasting bring natural depth to vegetables and seafood.</p>
+            </div>
+          </div>
+
+          <div style="margin-top: 2rem;">
+            <a href="about.html" class="text-link">Read Our Full Story &amp; Culinary Philosophy &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- C. Signature Dishes -->
+    <section class="section section--cream" aria-labelledby="signatures-heading">
+      <div class="container">
+        <div class="section-header section-header--center">
+          <span class="eyebrow">From Our Hearth</span>
+          <h2 id="signatures-heading">Signature Dishes</h2>
+          <p class="section-lead">
+            A curated preview of plates from our kitchen. Prices shown in Indian Rupees (INR) are fictional sample values for demonstration purposes.
+          </p>
+        </div>
+
+        <div class="dishes-grid">
+          <!-- Dish 1 -->
+          <article class="dish-card">
+            <div class="dish-card__media">
+              <img
+                src="https://images.unsplash.com/photo-1572695157366-5e585ab2b69f?auto=format&amp;fit=crop&amp;w=900&amp;q=80"
+                alt="Charred Heirloom Burrata and Fig plated with grilled sourdough"
+                loading="lazy"
+                decoding="async"
+                data-fallback-type="dish"
+              >
+              <div class="dish-card__badges">
+                <span class="badge badge--category">Starters</span>
+                <span class="badge badge--veg"><span class="veg-dot" aria-hidden="true"></span>Vegetarian</span>
+              </div>
+            </div>
+            <div class="dish-card__body">
+              <div class="dish-card__header">
+                <h3 class="dish-card__title">Charred Heirloom Burrata &amp; Fig</h3>
+                <span class="dish-card__price">₹680</span>
+              </div>
+              <p class="dish-card__desc">
+                Artisanal creamy burrata paired with wood-roasted Black Mission figs, aged Modena balsamic reduction, toasted pine nuts, and cold-pressed olive oil on grilled sourdough.
+              </p>
+              <div class="dish-card__footer">
+                <span>House Signature</span>
+                <span>Sample Price (INR)</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Dish 2 -->
+          <article class="dish-card">
+            <div class="dish-card__media">
+              <img
+                src="https://images.unsplash.com/photo-1555949258-eb67b1ef0ceb?auto=format&amp;fit=crop&amp;w=900&amp;q=80"
+                alt="Black Truffle and Wild Mushroom Tagliatelle"
+                loading="lazy"
+                decoding="async"
+                data-fallback-type="dish"
+              >
+              <div class="dish-card__badges">
+                <span class="badge badge--category">Pasta</span>
+                <span class="badge badge--veg"><span class="veg-dot" aria-hidden="true"></span>Vegetarian</span>
+              </div>
+            </div>
+            <div class="dish-card__body">
+              <div class="dish-card__header">
+                <h3 class="dish-card__title">Black Truffle &amp; Wild Mushroom Tagliatelle</h3>
+                <span class="dish-card__price">₹980</span>
+              </div>
+              <p class="dish-card__desc">
+                Hand-rolled egg ribbon pasta tossed with foraged porcini and cremini mushrooms, 24-month aged Parmigiano butter, fresh thyme, and shaved black truffle.
+              </p>
+              <div class="dish-card__footer">
+                <span>Hand-Rolled Daily</span>
+                <span>Sample Price (INR)</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Dish 3 -->
+          <article class="dish-card">
+            <div class="dish-card__media">
+              <img
+                src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&amp;fit=crop&amp;w=900&amp;q=80"
+                alt="Herb-Crusted Sea Bass in saffron fennel broth"
+                loading="lazy"
+                decoding="async"
+                data-fallback-type="dish"
+              >
+              <div class="dish-card__badges">
+                <span class="badge badge--category">Main Course</span>
+                <span class="badge badge--nonveg"><span class="veg-dot" aria-hidden="true"></span>Seafood</span>
+              </div>
+            </div>
+            <div class="dish-card__body">
+              <div class="dish-card__header">
+                <h3 class="dish-card__title">Herb-Crusted Sea Bass</h3>
+                <span class="dish-card__price">₹1,450</span>
+              </div>
+              <p class="dish-card__desc">
+                Pan-seared wild sea bass fillet over saffron-infused fennel broth, charred baby leeks, blistered cherry tomatoes, and Kalamata olive tapenade.
+              </p>
+              <div class="dish-card__footer">
+                <span>Coastal Catch</span>
+                <span>Sample Price (INR)</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Dish 4 -->
+          <article class="dish-card">
+            <div class="dish-card__media">
+              <img
+                src="https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&amp;fit=crop&amp;w=900&amp;q=80"
+                alt="Burnt Honey and Olive Oil Basque Cheesecake"
+                loading="lazy"
+                decoding="async"
+                data-fallback-type="dish"
+              >
+              <div class="dish-card__badges">
+                <span class="badge badge--category">Desserts</span>
+                <span class="badge badge--veg"><span class="veg-dot" aria-hidden="true"></span>Vegetarian</span>
+              </div>
+            </div>
+            <div class="dish-card__body">
+              <div class="dish-card__header">
+                <h3 class="dish-card__title">Burnt Honey &amp; Olive Oil Basque Cheesecake</h3>
+                <span class="dish-card__price">₹540</span>
+              </div>
+              <p class="dish-card__desc">
+                Velvety caramelized crustless cheesecake infused with single-estate extra virgin olive oil and wild forest honey, served with macerated berries.
+              </p>
+              <div class="dish-card__footer">
+                <span>Baked Fresh</span>
+                <span>Sample Price (INR)</span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="section-footer-cta">
+          <a href="menu.html" class="btn btn--primary">View Complete Menu</a>
+          <p class="field-hint">Filter by Starters, Mains, Pasta, Desserts, Beverages, or Vegetarian options.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- D. Experience Section -->
+    <section class="section" aria-labelledby="experience-heading">
+      <div class="container">
+        <div class="section-header section-header--center">
+          <span class="eyebrow">The Olive &amp; Ember Experience</span>
+          <h2 id="experience-heading">Crafted Around Warmth, Seasonality &amp; Care</h2>
+          <p class="section-lead">
+            Every detail of our dining room and kitchen is shaped to make an ordinary evening feel restorative.
+          </p>
+        </div>
+
+        <div class="pillars-grid">
+          <article class="pillar-card">
+            <div class="pillar-card__image">
+              <img
+                src="https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?auto=format&amp;fit=crop&amp;w=800&amp;q=80"
+                alt="Candlelit tables and natural timber seating inside the bistro"
+                loading="lazy"
+                decoding="async"
+                data-fallback-type="editorial"
+              >
+            </div>
+            <div class="pillar-card__content">
+              <span class="pillar-card__number">01 · Ambience</span>
+              <h3 class="pillar-card__title">Intimate Lighting &amp; Acoustic Calm</h3>
+              <p class="pillar-card__text">
+                Spaciously arranged tables, lime-washed walls, and soft acoustic playlists ensure you can actually hear the people sitting across from you.
+              </p>
+            </div>
+          </article>
+
+          <article class="pillar-card">
+            <div class="pillar-card__image">
+              <img
+                src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&amp;fit=crop&amp;w=800&amp;q=80"
+                alt="Freshly baked sourdough loaves cooling on a wooden counter"
+                loading="lazy"
+                decoding="async"
+                data-fallback-type="dish"
+              >
+            </div>
+            <div class="pillar-card__content">
+              <span class="pillar-card__number">02 · Ingredients</span>
+              <h3 class="pillar-card__title">Small-Batch &amp; Scratch Made</h3>
+              <p class="pillar-card__text">
+                From 36-hour fermented country sourdough to hand-rolled pasta and house-infused botanical spritzes, nothing arrives from a pre-made packet.
+              </p>
+            </div>
+          </article>
+
+          <article class="pillar-card">
+            <div class="pillar-card__image">
+              <img
+                src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&amp;fit=crop&amp;w=800&amp;q=80"
+                alt="Server pouring a botanical aperitif at a bistro table"
+                loading="lazy"
+                decoding="async"
+                data-fallback-type="editorial"
+              >
+            </div>
+            <div class="pillar-card__content">
+              <span class="pillar-card__number">03 · Hospitality</span>
+              <h3 class="pillar-card__title">Attentive, Unhurried Service</h3>
+              <p class="pillar-card__text">
+                We never rush a table between seatings. Whether you have dietary preferences or need a quiet corner for an anniversary, our team is happy to adapt.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- E. Reservation Call-to-Action -->
+    <section class="section section--olive" aria-labelledby="cta-heading">
+      <div class="container container--narrow" style="text-align: center;">
+        <span class="eyebrow eyebrow--light">Join Us at the Table</span>
+        <h2 id="cta-heading" style="margin-bottom: 1rem;">Planning a Dinner or Weekend Gathering?</h2>
+        <p style="margin-bottom: 2rem; font-size: 1.08rem;">
+          Submit a table reservation request online for parties of 1 to 12 guests. Walk-ins are always welcome at our courtyard counter as space permits.
+        </p>
+        <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+          <a href="reservation.html" class="btn btn--terracotta">Book a Table Request</a>
+          <a href="contact.html" class="btn btn--outline-light">Inquire About Private Dining</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- F. Testimonials (Clearly Identified Fictional Sample Testimonials) -->
+    <section class="section section--cream" aria-labelledby="testimonials-heading">
+      <div class="container">
+        <div class="section-header section-header--center">
+          <span class="demo-badge">Fictional Sample Testimonials — For Design Demonstration</span>
+          <h2 id="testimonials-heading" style="margin-top: 0.9rem;">What Guests Illustrate in Our Concept</h2>
+          <p class="section-lead">
+            The quotes below are fictional editorial examples written to demonstrate the layout of this prototype website, not real customer reviews.
+          </p>
+        </div>
+
+        <div class="testimonials-grid">
+          <article class="testimonial-card">
+            <blockquote class="testimonial-card__quote">
+              “A quiet refuge from the city rush. The charred burrata with roasted figs and the warm sourdough alone are worth the evening trip.”
+            </blockquote>
+            <div class="testimonial-card__author">
+              <span class="testimonial-card__name">Aarav Deshmukh</span>
+              <span class="testimonial-card__context">Fictional Sample Guest · Dinner Service</span>
+            </div>
+          </article>
+
+          <article class="testimonial-card">
+            <blockquote class="testimonial-card__quote">
+              “We loved that no one hurried our table. Every course arrived at a thoughtful pace, and the truffle mushroom tagliatelle felt genuinely handmade.”
+            </blockquote>
+            <div class="testimonial-card__author">
+              <span class="testimonial-card__name">Meera &amp; Rohan Kulkarni</span>
+              <span class="testimonial-card__context">Fictional Sample Guests · Anniversary Evening</span>
+            </div>
+          </article>
+
+          <article class="testimonial-card">
+            <blockquote class="testimonial-card__quote">
+              “The zero-proof blood orange and smoked rosemary spritz paired wonderfully with the cauliflower harissa steak. Warm, grounded hospitality.”
+            </blockquote>
+            <div class="testimonial-card__author">
+              <span class="testimonial-card__name">Nandini Joshi</span>
+              <span class="testimonial-card__context">Fictional Sample Guest · Weekend Lunch</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- G. Opening Hours and Location (Clearly Labeled Demonstration Info) -->
+    <section class="section" aria-labelledby="location-heading">
+      <div class="container">
+        <div class="section-header section-header--center">
+          <span class="eyebrow">Visit Us</span>
+          <h2 id="location-heading">Hours &amp; Demonstration Location</h2>
+          <p class="section-lead">
+            Please note: Olive &amp; Ember Bistro is a fictional demonstration project. The Pune address, phone number, and operating hours below are sample placeholders that require confirmation before any real-world use.
+          </p>
+        </div>
+
+        <div class="info-split">
+          <div class="info-panel">
+            <div class="info-panel__title">
+              <h3>Opening Hours</h3>
+              <span class="demo-badge">Sample Schedule</span>
+            </div>
+            <p class="field-hint">Kitchen last orders are taken 30 minutes prior to closing.</p>
+            <ul class="hours-list">
+              <li class="hours-item">
+                <span class="hours-item__day">Monday</span>
+                <span class="hours-item__time">Closed (Bakehouse &amp; Prep Day)</span>
+              </li>
+              <li class="hours-item">
+                <span class="hours-item__day">Tuesday – Thursday</span>
+                <span class="hours-item__time">12:30 PM – 3:30 PM · 7:00 PM – 10:30 PM</span>
+              </li>
+              <li class="hours-item">
+                <span class="hours-item__day">Friday – Saturday</span>
+                <span class="hours-item__time">12:30 PM – 4:00 PM · 7:00 PM – 11:15 PM</span>
+              </li>
+              <li class="hours-item">
+                <span class="hours-item__day">Sunday</span>
+                <span class="hours-item__time">12:00 PM – 4:00 PM · 7:00 PM – 10:30 PM</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="info-panel">
+            <div class="info-panel__title">
+              <h3>Location &amp; Contact</h3>
+              <span class="demo-badge">Placeholder Address</span>
+            </div>
+            <dl class="location-details">
+              <div>
+                <dt>Demonstration Address</dt>
+                <dd>Plot 14, Lane 6, Koregaon Park (Sample Address), Pune, Maharashtra 411001, India</dd>
+              </div>
+              <div>
+                <dt>Telephone (Placeholder)</dt>
+                <dd>+91 20 2615 0199 (Fictional Demo Number)</dd>
+              </div>
+              <div>
+                <dt>Email (Placeholder)</dt>
+                <dd>reservations@oliveandember.example.com</dd>
+              </div>
+              <div>
+                <dt>Parking &amp; Access</dt>
+                <dd>Step-free ground floor entrance. Please verify address details before real-world deployment.</dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- H. Global Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="footer-brand__title">Olive &amp; Ember Bistro</a>
+          <p class="footer-brand__tagline">
+            “Good food. Slow moments. Lasting memories.”
+          </p>
+          <span class="demo-badge">Fictional Restaurant Portfolio Project</span>
+        </div>
+
+        <div>
+          <h3 class="footer-heading">Navigation</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Food Menu</a></li>
+            <li><a href="about.html">Our Story</a></li>
+            <li><a href="reservation.html">Book a Table</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="footer-heading">Sample Hours</h3>
+          <ul class="footer-contact-list">
+            <li><strong>Tue – Thu:</strong> 12:30–15:30, 19:00–22:30</li>
+            <li><strong>Fri – Sat:</strong> 12:30–16:00, 19:00–23:15</li>
+            <li><strong>Sunday:</strong> 12:00–16:00, 19:00–22:30</li>
+            <li><strong>Monday:</strong> Closed</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="footer-heading">Placeholder Contact</h3>
+          <ul class="footer-contact-list">
+            <li>Plot 14, Lane 6, Koregaon Park (Demo), Pune 411001</li>
+            <li>+91 20 2615 0199 (Sample)</li>
+            <li>hello@oliveandember.example.com</li>
+          </ul>
+          <div class="social-links" aria-label="Configurable social media placeholders">
+            <a href="contact.html" class="social-pill" title="Configurable social link placeholder">Instagram (Placeholder)</a>
+            <a href="contact.html" class="social-pill" title="Configurable social link placeholder">Facebook (Placeholder)</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; <span data-current-year>2026</span> Olive &amp; Ember Bistro. Fictional demonstration website built with HTML, CSS, Vanilla JS &amp; Supabase.</p>
+        <p>All addresses, prices (INR), and testimonials are sample demonstration data.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.49.1/dist/umd/supabase.min.js" crossorigin="anonymous"></script>
+  <script src="js/supabase.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

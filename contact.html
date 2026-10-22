@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us — Olive &amp; Ember Bistro</title>
+  <meta name="description" content="Get in touch with Olive &amp; Ember Bistro for private dining inquiries, dietary questions, or general feedback.">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Global Navigation -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo" aria-label="Olive &amp; Ember Bistro Home">
+        <span class="brand-logo__title">Olive &amp; Ember</span>
+        <span class="brand-logo__subtitle">Bistro &amp; Hearth</span>
+      </a>
+
+      <button
+        type="button"
+        class="nav-toggle"
+        aria-expanded="false"
+        aria-controls="primary-navigation"
+        aria-label="Open navigation menu"
+      >
+        <span class="nav-toggle__bars" aria-hidden="true">
+          <span class="nav-toggle__bar"></span>
+          <span class="nav-toggle__bar"></span>
+          <span class="nav-toggle__bar"></span>
+        </span>
+      </button>
+
+      <nav id="primary-navigation" class="nav-menu" aria-label="Primary navigation">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="menu.html" class="nav-link">Menu</a></li>
+          <li><a href="about.html" class="nav-link">Our Story</a></li>
+          <li><a href="reservation.html" class="nav-link">Reservations</a></li>
+          <li><a href="contact.html" class="nav-link is-active" aria-current="page">Contact</a></li>
+        </ul>
+        <a href="reservation.html" class="btn btn--terracotta btn--sm">Book a Table</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- Page Hero -->
+    <section class="page-hero" aria-labelledby="contact-page-title">
+      <div class="container">
+        <span class="eyebrow">Get in Touch</span>
+        <h1 id="contact-page-title">Contact &amp; Inquiries</h1>
+        <p class="section-lead">
+          Have a question about seasonal ingredients, private group dining for 13+ guests, or dietary accommodations? Find our demonstration contact details and inquiry form below.
+        </p>
+      </div>
+    </section>
+
+    <!-- Contact Content & Demo Form -->
+    <section class="section" aria-label="Contact details and demonstration inquiry form">
+      <div class="container">
+        <div class="reservation-layout">
+          <!-- Contact Form (Client-Side Validated Demo) -->
+          <div class="form-card">
+            <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.5rem;">
+              <h2 style="font-size: 2rem;">Send an Inquiry</h2>
+              <span class="demo-badge">UI Demo Form</span>
+            </div>
+            <p class="field-hint" style="margin-bottom: 1.5rem;">
+              <strong>Demonstration Notice:</strong> This general inquiry form validates inputs in your browser for UI demonstration purposes and is not connected to an email server. To test live database persistence with Supabase, please use our <a href="reservation.html" class="text-link">Table Reservation page</a>.
+            </p>
+
+            <!-- Accessible Form Status Banner -->
+            <div
+              id="contact-form-status"
+              class="form-status"
+              role="status"
+              aria-live="polite"
+              tabindex="-1"
+              hidden
+            ></div>
+
+            <form id="contact-form" novalidate>
+              <!-- Honeypot -->
+              <div class="form-group--honeypot" aria-hidden="true">
+                <label for="contact-website">Leave this field blank</label>
+                <input
+                  type="text"
+                  id="contact-website"
+                  name="website"
+                  tabindex="-1"
+                  autocomplete="off"
+                >
+              </div>
+
+              <div class="form-grid">
+                <div class="form-group">
+                  <label class="form-label" for="contact-name">
+                    Full Name <span class="required-star" aria-hidden="true">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    id="contact-name"
+                    name="name"
+                    class="form-control"
+                    placeholder="Your name"
+                    autocomplete="name"
+                    required
+                    aria-describedby="contact-name-error"
+                  >
+                  <span id="contact-name-error" class="field-error" role="status"></span>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="contact-email">
+                    Email Address <span class="required-star" aria-hidden="true">*</span>
+                  </label>
+                  <input
+                    type="email"
+                    id="contact-email"
+                    name="email"
+                    class="form-control"
+                    placeholder="name@example.com"
+                    autocomplete="email"
+                    required
+                    aria-describedby="contact-email-error"
+                  >
+                  <span id="contact-email-error" class="field-error" role="status"></span>
+                </div>
+
+                <div class="form-group form-group--full">
+                  <label class="form-label" for="contact-subject">
+                    Inquiry Topic <span class="required-star" aria-hidden="true">*</span>
+                  </label>
+                  <select
+                    id="contact-subject"
+                    name="subject"
+                    class="form-control"
+                    required
+                    aria-describedby="contact-subject-error"
+                  >
+                    <option value="">Select a topic…</option>
+                    <option value="Private Dining (13+ Guests)">Private Dining &amp; Group Gatherings (13+ Guests)</option>
+                    <option value="Dietary & Allergen Question">Dietary &amp; Allergen Question</option>
+                    <option value="Press & Partnerships">Press, Events &amp; Partnerships</option>
+                    <option value="General Feedback">General Feedback</option>
+                  </select>
+                  <span id="contact-subject-error" class="field-error" role="status"></span>
+                </div>
+
+                <div class="form-group form-group--full">
+                  <label class="form-label" for="contact-message">
+                    Message <span class="required-star" aria-hidden="true">*</span>
+                  </label>
+                  <textarea
+                    id="contact-message"
+                    name="message"
+                    class="form-control"
+                    placeholder="How can our team help you?"
+                    required
+                    maxlength="1000"
+                    aria-describedby="contact-message-hint contact-message-error"
+                  ></textarea>
+                  <span id="contact-message-hint" class="field-hint">10 to 1,000 characters</span>
+                  <span id="contact-message-error" class="field-error" role="status"></span>
+                </div>
+              </div>
+
+              <div style="margin-top: 1.5rem;">
+                <button type="submit" id="contact-submit-btn" class="btn btn--primary">
+                  Validate Demo Inquiry
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <!-- Contact & Hours Information -->
+          <aside aria-label="Placeholder address and opening hours">
+            <div class="sidebar-card">
+              <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.75rem;">
+                <h3 style="margin-bottom: 0;">Placeholder Address</h3>
+                <span class="demo-badge">Fictional Demo</span>
+              </div>
+              <dl class="location-details" style="margin-top: 0.75rem;">
+                <div>
+                  <dt>Demonstration Location</dt>
+                  <dd>Plot 14, Lane 6, Koregaon Park (Fictional Sample Address), Pune, Maharashtra 411001, India</dd>
+                </div>
+                <div>
+                  <dt>Telephone (Placeholder)</dt>
+                  <dd>+91 20 2615 0199 (Fictional Sample)</dd>
+                </div>
+                <div>
+                  <dt>General Email (Placeholder)</dt>
+                  <dd>hello@oliveandember.example.com</dd>
+                </div>
+                <div>
+                  <dt>Reservations Desk (Placeholder)</dt>
+                  <dd>reservations@oliveandember.example.com</dd>
+                </div>
+              </dl>
+            </div>
+
+            <div class="sidebar-card">
+              <h3>Opening Hours (Sample)</h3>
+              <ul class="hours-list" style="margin-top: 0.5rem;">
+                <li class="hours-item">
+                  <span class="hours-item__day">Monday</span>
+                  <span class="hours-item__time">Closed</span>
+                </li>
+                <li class="hours-item">
+                  <span class="hours-item__day">Tue – Thu</span>
+                  <span class="hours-item__time">12:30–3:30 PM, 7:00–10:30 PM</span>
+                </li>
+                <li class="hours-item">
+                  <span class="hours-item__day">Fri – Sat</span>
+                  <span class="hours-item__time">12:30–4:00 PM, 7:00–11:15 PM</span>
+                </li>
+                <li class="hours-item">
+                  <span class="hours-item__day">Sunday</span>
+                  <span class="hours-item__time">12:00–4:00 PM, 7:00–10:30 PM</span>
+                </li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+
+        <!-- Honest Map Placeholder -->
+        <div class="map-placeholder" role="region" aria-label="Map placeholder notice">
+          <span class="demo-badge" style="margin-bottom: 0.75rem;">Map Embed Placeholder</span>
+          <h3 class="map-placeholder__title">Interactive Map Disabled for Fictional Address</h3>
+          <p class="map-placeholder__text">
+            Because Olive &amp; Ember Bistro is a fictional demonstration restaurant and “Plot 14, Lane 6, Koregaon Park, Pune” is an illustrative placeholder address, no live map pin is embedded here to avoid pointing visitors to an unrelated real-world property. When deploying for a verified physical venue, replace this container with your official Google Maps or OpenStreetMap embed.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="footer-brand__title">Olive &amp; Ember Bistro</a>
+          <p class="footer-brand__tagline">
+            “Good food. Slow moments. Lasting memories.”
+          </p>
+          <span class="demo-badge">Fictional Restaurant Portfolio Project</span>
+        </div>
+
+        <div>
+          <h3 class="footer-heading">Navigation</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Food Menu</a></li>
+            <li><a href="about.html">Our Story</a></li>
+            <li><a href="reservation.html">Book a Table</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="footer-heading">Sample Hours</h3>
+          <ul class="footer-contact-list">
+            <li><strong>Tue – Thu:</strong> 12:30–15:30, 19:00–22:30</li>
+            <li><strong>Fri – Sat:</strong> 12:30–16:00, 19:00–23:15</li>
+            <li><strong>Sunday:</strong> 12:00–16:00, 19:00–22:30</li>
+            <li><strong>Monday:</strong> Closed</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="footer-heading">Placeholder Contact</h3>
+          <ul class="footer-contact-list">
+            <li>Plot 14, Lane 6, Koregaon Park (Demo), Pune 411001</li>
+            <li>+91 20 2615 0199 (Sample)</li>
+            <li>hello@oliveandember.example.com</li>
+          </ul>
+          <div class="social-links" aria-label="Configurable social media placeholders">
+            <a href="contact.html" class="social-pill" title="Configurable social link placeholder">Instagram (Placeholder)</a>
+            <a href="contact.html" class="social-pill" title="Configurable social link placeholder">Facebook (Placeholder)</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; <span data-current-year>2026</span> Olive &amp; Ember Bistro. Fictional demonstration website built with HTML, CSS, Vanilla JS &amp; Supabase.</p>
+        <p>All addresses, prices (INR), and testimonials are sample demonstration data.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.49.1/dist/umd/supabase.min.js" crossorigin="anonymous"></script>
+  <script src="js/supabase.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
