@@ -1,6 +1,6 @@
-/**
+﻿/**
  * ============================================================================
- * OLIVE & EMBER BISTRO — SUPABASE CLIENT, AUTH & DATABASE HELPER (js/supabase.js)
+ * OLIVE & EMBER BISTRO â€” SUPABASE CLIENT, AUTH & DATABASE HELPER (js/supabase.js)
  * ============================================================================
  * Initializes a single shared official Supabase JavaScript SDK client
  * (@supabase/supabase-js v2) for browser use, with session persistence enabled.
@@ -28,9 +28,9 @@
   'use strict';
 
   const FALLBACK_CONFIG = {
-    supabaseUrl: 'https://your-project-ref.supabase.co',
-    supabasePublishableKey: 'your-supabase-publishable-or-anon-key-here'
-  };
+    supabaseUrl: 'https://ptgnfwlinqqqgfepzava.supabase.co',
+    supabasePublishableKey: 'sb_publishable_IOz0j1exCHCza5NpSWgI7Q_idKawb1N'
+};
 
   /**
    * Whitelist of allowed local pages for post-login redirects.
@@ -663,3 +663,4 @@
     auth: authHelper
   };
 })(window);
+
