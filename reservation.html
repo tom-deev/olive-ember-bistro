@@ -18,8 +18,17 @@
   <header class="site-header">
     <div class="container nav-container">
       <a href="index.html" class="brand-logo" aria-label="Olive &amp; Ember Bistro Home">
-        <span class="brand-logo__title">Olive &amp; Ember</span>
-        <span class="brand-logo__subtitle">Bistro &amp; Hearth</span>
+        <img
+          src="assets/images/olive-ember-logo.svg"
+          alt=""
+          class="brand-logo__mark"
+          width="40"
+          height="40"
+        >
+        <span class="brand-logo__text">
+          <span class="brand-logo__title">Olive &amp; Ember</span>
+          <span class="brand-logo__subtitle">Bistro &amp; Hearth</span>
+        </span>
       </a>
 
       <button
@@ -44,6 +53,7 @@
           <li><a href="reservation.html" class="nav-link is-active" aria-current="page">Reservations</a></li>
           <li><a href="contact.html" class="nav-link">Contact</a></li>
         </ul>
+        <div id="nav-auth-slot" class="nav-auth" aria-live="polite"></div>
         <a href="reservation.html" class="btn btn--terracotta btn--sm">Book a Table</a>
       </nav>
     </div>
@@ -73,6 +83,25 @@
           hidden
         ></div>
 
+        <!-- Authentication Gate Banner (Visible when logged out) -->
+        <div
+          id="reservation-auth-gate"
+          class="auth-gate-card"
+          role="region"
+          aria-label="Account sign-in required for reservations"
+        >
+          <div class="auth-gate-card__copy">
+            <h3>Customer Sign-In Required to Request a Table</h3>
+            <p>
+              Please sign in or create an Olive &amp; Ember account before submitting a reservation request.
+            </p>
+          </div>
+          <div class="auth-gate-card__actions">
+            <a href="login.html?redirect=reservation.html" class="btn btn--primary btn--sm">Sign In</a>
+            <a href="signup.html?redirect=reservation.html" class="btn btn--outline btn--sm">Create Account</a>
+          </div>
+        </div>
+
         <div class="reservation-layout">
           <!-- Main Form Card -->
           <div class="form-card">
@@ -80,6 +109,12 @@
             <p class="field-hint" style="margin-bottom: 1.5rem;">
               Fields marked with <span class="required-star" aria-hidden="true">*</span> are required. No advance payment or credit card is collected.
             </p>
+
+            <!-- Signed-In Customer Indicator Bar -->
+            <div id="reservation-signed-in-banner" class="signed-in-bar" hidden>
+              <span>Booking as <strong id="reservation-signed-in-name">Guest</strong></span>
+              <a href="#my-reservations" class="text-link">View Your Requests &darr;</a>
+            </div>
 
             <!-- Accessible Submission Status Alert -->
             <div
@@ -263,6 +298,23 @@
                 <strong>Important Confirmation Notice:</strong> Submitting this form records a reservation <em>request</em> with status <code>pending</code>. It does not guarantee real-time table availability. In a live restaurant workflow, our host team reviews pending requests and confirms your booking via phone or email.
               </div>
             </form>
+
+            <!-- Lightweight Authenticated Customer Reservations Section (Feature 5) -->
+            <section
+              id="my-reservations"
+              class="my-reservations-card"
+              aria-labelledby="my-reservations-heading"
+              hidden
+            >
+              <span class="eyebrow" style="margin-bottom: 0.35rem;">Your Account</span>
+              <h3 id="my-reservations-heading" style="font-size: 1.55rem; margin-bottom: 0.3rem;">
+                Your Reservation Requests
+              </h3>
+              <p class="field-hint">
+                Showing reservation requests associated with your signed-in account.
+              </p>
+              <div id="my-reservations-list" aria-live="polite"></div>
+            </section>
           </div>
 
           <!-- Sidebar Guidelines -->

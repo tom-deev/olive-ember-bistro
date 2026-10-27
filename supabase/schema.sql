@@ -37,6 +37,7 @@ CREATE INDEX IF NOT EXISTS idx_menu_items_created_at
 -- ============================================================================
 CREATE TABLE IF NOT EXISTS public.reservations (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    user_id UUID REFERENCES auth.users(id) ON DELETE SET NULL,
     full_name TEXT NOT NULL CHECK (char_length(trim(full_name)) BETWEEN 2 AND 120),
     email TEXT NOT NULL CHECK (
         char_length(trim(email)) BETWEEN 5 AND 254
@@ -54,13 +55,21 @@ CREATE TABLE IF NOT EXISTS public.reservations (
     created_at TIMESTAMPTZ NOT NULL DEFAULT now()
 );
 
+-- Ensure user_id column exists if table was created prior to authentication migration
+ALTER TABLE public.reservations
+    ADD COLUMN IF NOT EXISTS user_id UUID REFERENCES auth.users(id) ON DELETE SET NULL;
+
 COMMENT ON TABLE public.reservations IS 'Table reservation requests submitted from the Olive & Ember Bistro website.';
+COMMENT ON COLUMN public.reservations.user_id IS 'Authenticated Supabase user ID (auth.users.id) who submitted the reservation request.';
 
 CREATE INDEX IF NOT EXISTS idx_reservations_date_status
     ON public.reservations (reservation_date, status);
 
 CREATE INDEX IF NOT EXISTS idx_reservations_created_at
     ON public.reservations (created_at DESC);
+
+CREATE INDEX IF NOT EXISTS idx_reservations_user_id_created_at
+    ON public.reservations (user_id, created_at DESC);
 
 -- ============================================================================
 -- 3. ROW LEVEL SECURITY (RLS) POLICIES
@@ -71,22 +80,26 @@ ALTER TABLE public.reservations ENABLE ROW LEVEL SECURITY;
 -- Drop existing policies if re-running the script so it stays idempotent
 DROP POLICY IF EXISTS "Public visitors can view available menu items" ON public.menu_items;
 DROP POLICY IF EXISTS "Public visitors can submit pending reservation requests" ON public.reservations;
+DROP POLICY IF EXISTS "Authenticated customers can insert own reservation requests" ON public.reservations;
+DROP POLICY IF EXISTS "Authenticated customers can view own reservations" ON public.reservations;
 
--- Policy A: Anyone can read available menu items
+-- Policy A: Anyone can read available menu items ( untouched )
 CREATE POLICY "Public visitors can view available menu items"
     ON public.menu_items
     FOR SELECT
     TO anon, authenticated
     USING (is_available = true);
 
--- Policy B: Public visitors can ONLY insert new reservation requests that meet
--- strict validation criteria. They CANNOT read, update, or delete reservations.
-CREATE POLICY "Public visitors can submit pending reservation requests"
+-- Policy B: Authenticated customers can ONLY insert new reservation requests
+-- for their own auth.uid() that meet strict validation criteria.
+CREATE POLICY "Authenticated customers can insert own reservation requests"
     ON public.reservations
     FOR INSERT
-    TO anon, authenticated
+    TO authenticated
     WITH CHECK (
-        status = 'pending'
+        auth.uid() IS NOT NULL
+        AND user_id = auth.uid()
+        AND status = 'pending'
         AND guests BETWEEN 1 AND 12
         AND reservation_date >= CURRENT_DATE
         AND char_length(trim(full_name)) BETWEEN 2 AND 120
@@ -95,11 +108,22 @@ CREATE POLICY "Public visitors can submit pending reservation requests"
         AND (special_requests IS NULL OR char_length(special_requests) <= 500)
     );
 
+-- Policy C: Authenticated customers can ONLY view their own reservation requests.
+CREATE POLICY "Authenticated customers can view own reservations"
+    ON public.reservations
+    FOR SELECT
+    TO authenticated
+    USING (
+        auth.uid() IS NOT NULL
+        AND user_id = auth.uid()
+    );
+
 -- Explicitly ensure privileges align with RLS policies for anon/authenticated roles
 GRANT USAGE ON SCHEMA public TO anon, authenticated;
 GRANT SELECT ON public.menu_items TO anon, authenticated;
-GRANT INSERT ON public.reservations TO anon, authenticated;
-REVOKE SELECT, UPDATE, DELETE ON public.reservations FROM anon;
+REVOKE ALL ON public.reservations FROM anon;
+REVOKE ALL ON public.reservations FROM authenticated;
+GRANT SELECT, INSERT ON public.reservations TO authenticated;
 
 -- ============================================================================
 -- 4. SEED DATA FOR menu_items (Fictional Demonstration Menu — Prices in INR)

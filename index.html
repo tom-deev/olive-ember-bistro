@@ -18,8 +18,17 @@
   <header class="site-header">
     <div class="container nav-container">
       <a href="index.html" class="brand-logo" aria-label="Olive &amp; Ember Bistro Home">
-        <span class="brand-logo__title">Olive &amp; Ember</span>
-        <span class="brand-logo__subtitle">Bistro &amp; Hearth</span>
+        <img
+          src="assets/images/olive-ember-logo.svg"
+          alt=""
+          class="brand-logo__mark"
+          width="40"
+          height="40"
+        >
+        <span class="brand-logo__text">
+          <span class="brand-logo__title">Olive &amp; Ember</span>
+          <span class="brand-logo__subtitle">Bistro &amp; Hearth</span>
+        </span>
       </a>
 
       <button
@@ -44,6 +53,7 @@
           <li><a href="reservation.html" class="nav-link">Reservations</a></li>
           <li><a href="contact.html" class="nav-link">Contact</a></li>
         </ul>
+        <div id="nav-auth-slot" class="nav-auth" aria-live="polite"></div>
         <a href="reservation.html" class="btn btn--terracotta btn--sm">Book a Table</a>
       </nav>
     </div>

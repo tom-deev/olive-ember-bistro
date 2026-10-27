@@ -397,6 +397,24 @@ h4 {
 
 .brand-logo {
   display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  line-height: 1;
+}
+
+.brand-logo__mark {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  transition: transform var(--transition-base);
+}
+
+.brand-logo:hover .brand-logo__mark {
+  transform: scale(1.03);
+}
+
+.brand-logo__text {
+  display: inline-flex;
   flex-direction: column;
   line-height: 1;
 }
@@ -421,13 +439,13 @@ h4 {
 .nav-menu {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
 .nav-list {
   display: flex;
   align-items: center;
-  gap: 1.85rem;
+  gap: 1.55rem;
 }
 
 .nav-link {
@@ -1477,6 +1495,289 @@ textarea.form-control {
 }
 
 /* ==========================================================================
+   NAVIGATION AUTHENTICATION CONTROLS
+   ========================================================================== */
+
+.nav-auth {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.15rem;
+  padding-left: 1.15rem;
+  border-left: 1px solid var(--border-subtle);
+  min-height: 28px;
+}
+
+.nav-auth[data-auth-state="loading"] {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.nav-auth__link {
+  white-space: nowrap;
+}
+
+.nav-account-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--olive-deep);
+  background-color: var(--bg-cream);
+  border: 1px solid var(--border-subtle);
+  padding: 0.35rem 0.78rem;
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+}
+
+.nav-account-indicator:hover {
+  border-color: var(--olive-primary);
+  background-color: var(--sage-tint);
+}
+
+.nav-account-indicator__dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--terracotta);
+  display: inline-block;
+}
+
+.nav-logout-btn {
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  padding: 0.35rem 0.5rem;
+  border-radius: var(--radius-sm);
+  transition: color var(--transition-base), background-color var(--transition-base);
+}
+
+.nav-logout-btn:hover {
+  color: var(--terracotta-dark);
+  background-color: var(--terracotta-soft);
+}
+
+/* ==========================================================================
+   AUTHENTICATION PAGES (LOGIN, SIGN UP, PASSWORD RECOVERY)
+   ========================================================================== */
+
+.auth-section {
+  padding-block: clamp(3rem, 6vw, 5.25rem);
+  background-color: var(--bg-cream);
+  min-height: calc(100vh - var(--header-height) - 120px);
+  display: flex;
+  align-items: center;
+}
+
+.auth-container {
+  width: 100%;
+  max-width: 540px;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+
+.auth-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: clamp(2rem, 4.5vw, 3rem);
+  box-shadow: var(--shadow-soft);
+}
+
+.auth-brand-header {
+  text-align: center;
+  margin-bottom: 1.85rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.auth-brand-header .brand-logo {
+  justify-content: center;
+  margin-bottom: 1.15rem;
+}
+
+.auth-brand-header h1 {
+  font-size: clamp(2rem, 3.6vw, 2.55rem);
+  margin-bottom: 0.5rem;
+}
+
+.auth-brand-header p {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  max-width: 44ch;
+  margin-inline: auto;
+}
+
+.password-field-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-field-wrap .form-control {
+  padding-right: 4.5rem;
+}
+
+.password-toggle-btn {
+  position: absolute;
+  right: 0.55rem;
+  padding: 0.3rem 0.6rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--olive-primary);
+  background-color: var(--bg-cream);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  transition: background-color var(--transition-base), color var(--transition-base);
+}
+
+.password-toggle-btn:hover {
+  background-color: var(--olive-primary);
+  color: var(--bg-ivory);
+  border-color: var(--olive-primary);
+}
+
+.auth-meta-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.35rem;
+  font-size: 0.88rem;
+}
+
+.auth-checkbox-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: var(--text-body);
+  cursor: pointer;
+  user-select: none;
+}
+
+.auth-checkbox-label input {
+  accent-color: var(--olive-primary);
+  width: 16px;
+  height: 16px;
+}
+
+.auth-footer-links {
+  margin-top: 1.75rem;
+  padding-top: 1.35rem;
+  border-top: 1px solid var(--border-subtle);
+  text-align: center;
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  display: grid;
+  gap: 0.65rem;
+}
+
+/* ==========================================================================
+   RESERVATION AUTH GATE & CUSTOMER RESERVATIONS SECTION
+   ========================================================================== */
+
+.auth-gate-card {
+  margin-bottom: 1.75rem;
+  padding: 1.35rem 1.5rem;
+  background-color: var(--bg-cream);
+  border: 1px solid var(--border-strong);
+  border-left: 4px solid var(--terracotta);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+
+.auth-gate-card[hidden] {
+  display: none;
+}
+
+.auth-gate-card__copy h3 {
+  font-size: 1.35rem;
+  margin-bottom: 0.25rem;
+}
+
+.auth-gate-card__copy p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.auth-gate-card__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.signed-in-bar {
+  margin-bottom: 1.35rem;
+  padding: 0.75rem 1rem;
+  background-color: var(--sage-tint);
+  border: 1px solid var(--sage-soft);
+  border-radius: var(--radius-sm);
+  font-size: 0.88rem;
+  color: var(--olive-deep);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.signed-in-bar[hidden] {
+  display: none;
+}
+
+.my-reservations-card {
+  margin-top: 2rem;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: clamp(1.5rem, 3.5vw, 2.25rem);
+  box-shadow: var(--shadow-soft);
+}
+
+.my-reservations-card[hidden] {
+  display: none;
+}
+
+.my-reservations-grid {
+  display: grid;
+  gap: 0.85rem;
+  margin-top: 1rem;
+}
+
+.my-reservation-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem 1.15rem;
+  background-color: var(--bg-cream);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+}
+
+.my-reservation-item__label {
+  display: block;
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin-bottom: 0.15rem;
+}
+
+.my-reservation-item__value {
+  font-size: 0.95rem;
+  color: var(--charcoal);
+}
+
+/* ==========================================================================
    RESPONSIVE BREAKPOINTS
    ========================================================================== */
 
@@ -1496,7 +1797,7 @@ textarea.form-control {
   }
 }
 
-@media (max-width: 820px) {
+@media (max-width: 900px) {
   .nav-toggle {
     display: inline-flex;
   }
@@ -1535,6 +1836,15 @@ textarea.form-control {
     font-size: 1.05rem;
     width: 100%;
     padding-block: 0.35rem;
+  }
+
+  .nav-auth {
+    padding-left: 0;
+    padding-top: 0.85rem;
+    border-left: none;
+    border-top: 1px solid var(--border-subtle);
+    width: 100%;
+    justify-content: space-between;
   }
 
   .editorial-grid,

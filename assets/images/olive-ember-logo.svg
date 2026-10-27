@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-labelledby="oe-logo-title">
+  <title id="oe-logo-title">Olive &amp; Ember Bistro Emblem</title>
+  <!-- Warm cream medallion with deep olive double ring -->
+  <circle cx="32" cy="32" r="30" fill="#FAF7F2" stroke="#1E2B20" stroke-width="2"/>
+  <circle cx="32" cy="32" r="26" fill="none" stroke="#C5B9A5" stroke-width="0.85"/>
+
+  <!-- Subtle terracotta hearth flame / ember in the lower-right cradle -->
+  <path
+    d="M36.5 44.5 C41.5 42.2, 44.2 36.8, 41.8 31.2 C40.4 28.0, 38.2 26.2, 37.8 23.0 C35.2 26.4, 34.0 30.2, 35.1 34.0 C33.2 32.6, 32.3 30.4, 32.6 28.2 C29.8 31.4, 29.6 36.8, 32.8 40.8 C34.0 42.3, 35.1 43.6, 36.5 44.5 Z"
+    fill="#C06746"
+  />
+  <path
+    d="M36.8 43.2 C39.2 41.4, 40.3 38.2, 39.0 35.2 C38.2 33.4, 37.1 32.2, 36.9 30.4 C35.5 32.5, 35.0 34.8, 35.7 37.1 C34.4 38.8, 35.1 41.6, 36.8 43.2 Z"
+    fill="#FAF7F2"
+    opacity="0.45"
+  />
+
+  <!-- Minimalist arching olive branch in deep olive & muted sage -->
+  <path
+    d="M18.5 42.5 C21.0 33.0, 27.5 24.0, 37.5 18.5"
+    fill="none"
+    stroke="#1E2B20"
+    stroke-width="2.2"
+    stroke-linecap="round"
+  />
+  <!-- Upper left olive leaf -->
+  <path
+    d="M25.5 27.2 C21.2 24.8, 19.5 20.2, 21.8 17.5 C24.8 18.5, 27.2 22.5, 25.5 27.2 Z"
+    fill="#1E2B20"
+  />
+  <!-- Upper tip olive leaf -->
+  <path
+    d="M32.2 21.8 C29.5 18.2, 29.8 13.8, 33.0 12.2 C35.2 14.2, 35.2 18.5, 32.2 21.8 Z"
+    fill="#83947F"
+  />
+  <!-- Lower left olive leaf -->
+  <path
+    d="M21.8 34.8 C17.2 33.8, 14.8 29.8, 16.5 26.5 C19.8 27.2, 22.5 30.8, 21.8 34.8 Z"
+    fill="#83947F"
+  />
+  <!-- Inner right olive leaf -->
+  <path
+    d="M26.5 29.5 C29.8 29.0, 32.8 26.5, 33.2 23.5 C30.0 23.8, 27.2 26.2, 26.5 29.5 Z"
+    fill="#1E2B20"
+  />
+  <!-- Olive fruit / ember dot -->
+  <circle cx="24.8" cy="34.2" r="2.5" fill="#1E2B20"/>
+</svg>
